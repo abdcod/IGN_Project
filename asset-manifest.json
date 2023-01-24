@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/IGN_Project/static/css/main.b32cd0ef.css",
-    "main.js": "/IGN_Project/static/js/main.f2ed7854.js",
+    "main.js": "/IGN_Project/static/js/main.61902e68.js",
     "static/js/787.66cb4309.chunk.js": "/IGN_Project/static/js/787.66cb4309.chunk.js",
     "index.html": "/IGN_Project/index.html",
     "main.b32cd0ef.css.map": "/IGN_Project/static/css/main.b32cd0ef.css.map",
-    "main.f2ed7854.js.map": "/IGN_Project/static/js/main.f2ed7854.js.map",
+    "main.61902e68.js.map": "/IGN_Project/static/js/main.61902e68.js.map",
     "787.66cb4309.chunk.js.map": "/IGN_Project/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b32cd0ef.css",
-    "static/js/main.f2ed7854.js"
+    "static/js/main.61902e68.js"
   ]
 }
