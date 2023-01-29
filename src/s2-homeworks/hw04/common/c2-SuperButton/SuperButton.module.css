@@ -1,16 +1,21 @@
 .button {
+    color: pink;
 }
 
 .disabled {
+    opacity: 0.5;
 }
 
 .secondary {
+    сolor: green;
 }
 
 .default {
+    color: blue;
 }
 
 .red {
+    color: red;
 }
 
 .default:hover {
