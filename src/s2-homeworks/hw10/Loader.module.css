@@ -1,3 +1,17 @@
 .loader {
     /*свг и/или анимация*/
+    /*background-color: red;*/
+    width: 40px;
+    height: 40px;
+    background-image: url("../../../assets/Ellipse_4.svg");
+    background-size: 100%;
+    animation:1s loader infinite linear;
+}
+@keyframes loader{
+    from{
+        transform:rotate(0)
+    }
+    to{
+        transform:rotate(360deg)
+    }
 }
