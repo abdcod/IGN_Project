@@ -49,7 +49,11 @@ function Clock() {
 
     const stringTime = getTwoDigits(date.getHours()) + ":" + getTwoDigits(date.getMinutes()) + ":" + getTwoDigits(date.getSeconds());
         //date.getTime() // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = getTwoDigits(date.getDate()) + "." + getTwoDigits(date.getMonth()) + "." + date.getFullYear()// день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = getTwoDigits(date.getDate()) + "." + getTwoDigits(date.getMonth() + 1) + "." + date.getFullYear()
+    // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+
+
+
 
     let formatter1 = new Intl.DateTimeFormat("en-US", {weekday: "long"});
     let formatter2 = new Intl.DateTimeFormat("en-US", {month: "long"});
