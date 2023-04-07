@@ -8,7 +8,7 @@ export type themeType = {
     themeId: number
 }
 
-const initState:themeType = {
+const initState: themeType = {
     themeId: 1,
 }
 
