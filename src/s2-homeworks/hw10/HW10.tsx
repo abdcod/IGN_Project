@@ -14,29 +14,16 @@ import {Loader} from './Loader'
 * */
 
 const HW10 = () => {
-    // useSelector, useDispatch // пишет студент
 
     const dispatch = useDispatch();
 
-    //const isLoading = false
-
-    //const [isLoading, setIsLoading] = useState(false)
-
     let isLoading = useSelector<AppStoreType, loadingType>(state => state.loading)
 
-    //dispatch(loadingAC(true))
-
-    console.log(isLoading);
-
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
-        // dispatch
-        //dispatch(loadingAC(true))
-        // setTimeout
+
         dispatch(loadingAC(true))
 
-        //setIsLoading(true);
         setTimeout(()=>{
-            // setIsLoading(false);
             dispatch(loadingAC(false))
         }, 1500)
     }
