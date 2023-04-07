@@ -15,9 +15,9 @@ import {loadingType} from "../hw10/bll/loadingReducer";
 * */
 
 const themes = [
-    {id: 1, value: 'light'},
-    {id: 2, value: 'blue'},
-    {id: 3, value: 'dark'},
+    {id: 1, value: 'Light'},
+    {id: 2, value: 'Blue'},
+    {id: 3, value: 'Dark'},
 ]
 
 const HW12 = () => {
@@ -45,13 +45,14 @@ const HW12 = () => {
             </div>
 
             <div className={s2.hw}>
+                <div className={s.wrapper}>
+                <span className={s.span}>Выберите тему</span>
                 <SuperSelect
                     id={'hw12-select-theme'}
                     className={s.select}
                     options={themes}
-                    onChangeOption={change}
-                    // сделать переключение тем
-                />
+                    onChangeOption={change}/>
+                </div>
             </div>
         </div>
     )
