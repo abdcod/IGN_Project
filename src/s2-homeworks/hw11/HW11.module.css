@@ -1,8 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 .container {
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 76px;
+    margin-left: 70px;
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 56px;
+    align-items: center;
+    gap: 12px;
 }
 
 .number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+
+    /*position: absolute;*/
+    width: 21px;
+    height: 20px;
+    /*margin*/
+
+
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+
 }
+
