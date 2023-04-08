@@ -35,6 +35,7 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+                setDisabledButtons(false);
                 // console.log(res);
                 setCode('Код 200!')
                 setImage(success200)
@@ -47,6 +48,7 @@ const HW13 = () => {
             })
             .catch((e) => {
             // console.log(e);
+                setDisabledButtons(false);
                 if (e.message === 'Request failed with status code 400') {
                     setCode('Ошибка 400')
                     setImage(error400)
@@ -64,7 +66,7 @@ const HW13 = () => {
                     setInfo('AxiosError');
                 }
             }).finally(() =>{
-            setDisabledButtons(false);
+
         })
     }
 
