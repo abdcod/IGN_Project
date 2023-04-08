@@ -22,6 +22,7 @@ const HW13 = () => {
     const [disabledButtons, setDisabledButtons] = useState<boolean>(false)
 
     const send = (x?: boolean | null) => () => {
+        setDisabledButtons(true);
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
@@ -31,7 +32,6 @@ const HW13 = () => {
         setImage('');
         setText('');
         setInfo('...loading');
-        setDisabledButtons(true);
         axios
             .post(url, {success: x})
             .then((res) => {
@@ -63,8 +63,6 @@ const HW13 = () => {
                     setText('Network Error\n' + 'AxiosError')
                     setInfo('');
                 }
-
-
             }).finally(() =>{
             setDisabledButtons(false);
         })
