@@ -19,27 +19,28 @@ const HW13 = () => {
     const [text, setText] = useState('');
     const [info, setInfo] = useState('');
     const [image, setImage] = useState('');
-    const [disabledtrueButton, setDisableTrueButton] = useState<boolean>(false)
-    const [disabledFalseButton, setDisableFalseButton] = useState<boolean>(false)
-    const [disabledUndefinedButton, setDisableUndefinedButton] = useState<boolean>(false)
-    const [disabledNullButton, setDisableNullButton] = useState<boolean>(false)
+    const [disabledButton, setDisabledButton] = useState<boolean>(false)
+    // const [disabledtrueButton, setDisableTrueButton] = useState<boolean>(false)
+    // const [disabledFalseButton, setDisableFalseButton] = useState<boolean>(false)
+    // const [disabledUndefinedButton, setDisableUndefinedButton] = useState<boolean>(false)
+    // const [disabledNullButton, setDisableNullButton] = useState<boolean>(false)
 
     const send = (x?: boolean | null) => () => {
-        //
+        setDisabledButton(true);
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
                 : 'https://samurai.it-incubator.io/api/3.0/homework/test';
 
-        if (x === true){
-            setDisableTrueButton(true)
-        } else if (x === false) {
-            setDisableFalseButton(true)
-        } else if (x === undefined) {
-            setDisableUndefinedButton(true)
-        } else if (x === null) {
-            setDisableNullButton(true)
-        }
+        // if (x === true){
+        //     setDisableTrueButton(true)
+        // } else if (x === false) {
+        //     setDisableFalseButton(true)
+        // } else if (x === undefined) {
+        //     setDisableUndefinedButton(true)
+        // } else if (x === null) {
+        //     setDisableNullButton(true)
+        // }
 
         setCode('');
         setImage('');
@@ -49,7 +50,8 @@ const HW13 = () => {
             .post(url, {success: x})
             .then((res) => {
 //
-                setDisableTrueButton(false);
+                setDisabledButton(false);
+                // setDisableTrueButton(false);
 // console.log(res);
                 setCode('Код 200!')
                 setImage(success200)
@@ -60,20 +62,21 @@ const HW13 = () => {
             .catch((e) => {
             // console.log(e);
 //
+                setDisabledButton(false);
                 if (e.message === 'Request failed with status code 400') {
-                    setDisableUndefinedButton(false)
+                    // setDisableUndefinedButton(false)
                     setCode('Ошибка 400')
                     setImage(error400)
                     setText('Ты не отправил success в body вообще!');
                     setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!');
                 } else if (e.message === 'Request failed with status code 500') {
-                    setDisableFalseButton(false)
+                    // setDisableFalseButton(false)
                     setCode('Ошибка 500');
                     setImage(error500);
                     setText('эмитация ошибки на сервере');
                     setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)');
                 } else {
-                    setDisableNullButton(false)
+                    // setDisableNullButton(false)
                     setCode('Error')
                     setImage(errorUnknown)
                     setText('Network Error')
@@ -94,7 +97,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        disabled={disabledtrueButton}
+                        disabled={disabledButton}
                         // дописать
 
                     >
@@ -104,7 +107,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        disabled={disabledFalseButton}
+                        disabled={disabledButton}
 
                         // дописать
 
@@ -115,7 +118,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        disabled={disabledUndefinedButton}
+                        disabled={disabledButton}
 
                         // дописать
 
@@ -126,7 +129,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        disabled={disabledNullButton}
+                        disabled={disabledButton}
                         // дописать
 
                     >
