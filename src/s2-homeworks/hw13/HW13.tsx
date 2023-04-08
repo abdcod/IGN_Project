@@ -15,32 +15,48 @@ import errorUnknown from './images/error.svg'
 * */
 
 const HW13 = () => {
-    const [code, setCode] = useState('')
-    const [text, setText] = useState('')
-    const [info, setInfo] = useState('')
-    const [image, setImage] = useState('')
+    const [code, setCode] = useState('');
+    const [text, setText] = useState('');
+    const [info, setInfo] = useState('');
+    const [image, setImage] = useState('');
 
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test';
 
-        setCode('')
-        setImage('')
-        setText('')
-        setInfo('...loading')
-
+        setCode('');
+        setImage('');
+        setText('');
+        setInfo('...loading');
         axios
             .post(url, {success: x})
             .then((res) => {
+                // console.log(res);
                 setCode('Код 200!')
                 setImage(success200)
+                setText("...всё ок) \n код 200 - обычно означает что скорее всего всё ок)")
+
                 // дописать
 
             })
             .catch((e) => {
-                // дописать
+            console.log(e);
+                if (e.message === 'Request failed with status code 400') {
+                    setCode('Ошибка 400')
+                    setImage(error400)
+                    setText('Ты не отправил success в body вообще!\nошибка 400 - обычно означает что скорее всего фронт\n отправил что-то не то на бэк!')
+                } else if (e.message === 'Request failed with status code 500') {
+                    setCode('Ошибка 500')
+                    setImage(error500)
+                    setText('эмитация ошибки на сервере\nошибка 500 - обычно означает что что-то сломалось на\nсервере, например база данных)')
+                } else {
+                    setCode('Error')
+                    setImage(errorUnknown)
+                    setText('Network Error\n' + 'AxiosError')
+                }
+
 
             })
     }
@@ -93,7 +109,6 @@ const HW13 = () => {
                     <div className={s.imageContainer}>
                         {image && <img src={image} className={s.image} alt="status"/>}
                     </div>
-
                     <div className={s.textContainer}>
                         <div id={'hw13-code'} className={s.code}>
                             {code}

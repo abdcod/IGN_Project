@@ -1,22 +1,34 @@
 .buttonsContainer {
 }
 
+
 .responseContainer {
+
 }
 
 .imageContainer {
+    width: 300px;
+    height: 300px;
 }
 
 .image {
+    width: 200px;
+    height: 200px;
 }
 
-.textContainer{
+.textContainer {
+
 }
 
 .code {
+
 }
 
 .text {
+/*border: 3px solid green;*/
+    white-space: pre-wrap;
 }
+
 .info {
+
 }

@@ -2,16 +2,16 @@ import {AffairType, FilterType} from "./HW2";
 
 test("it's wright filter to filter affairs", () => {
 
-    const defaultAffairs: Array<AffairType> = [ // need to fix any
-        {_id: 1, name: 'React', priority: 'high'}, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
+    const defaultAffairs: Array<AffairType> = [
+        {_id: 1, name: 'React', priority: 'high'},
         {_id: 2, name: 'anime', priority: 'low'},
         {_id: 3, name: 'games', priority: 'low'},
         {_id: 4, name: 'work', priority: 'high'},
         {_id: 5, name: 'html & css', priority: 'middle'},
     ]
-     const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => { // need to fix any
+    const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => {
 
-        switch (filter){
+        switch (filter) {
             case "high":
                 return affairs.filter(item => item.priority === "high");
             case "low":
@@ -49,15 +49,15 @@ test("it's wright filter to filter affairs", () => {
 
 test("it's wright function deleteAffair", () => {
 
-    const defaultAffairs: Array<AffairType> = [ // need to fix any
-        {_id: 1, name: 'React', priority: 'high'}, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
+    const defaultAffairs: Array<AffairType> = [
+        {_id: 1, name: 'React', priority: 'high'},
         {_id: 2, name: 'anime', priority: 'low'},
         {_id: 3, name: 'games', priority: 'low'},
         {_id: 4, name: 'work', priority: 'high'},
         {_id: 5, name: 'html & css', priority: 'middle'},
     ]
 
-    const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => { // need to fix any
+    const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => {
 
         const afterDeleteAffairs = affairs.filter(item => item._id !== _id);
         return afterDeleteAffairs;
